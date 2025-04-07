@@ -1,51 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Your Techy Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
     <h1>Your Name</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <label class="toggle-switch">
+      <input type="checkbox" id="theme-toggle" />
+      <span class="slider"></span>
+    </label>
   </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="hero">
+    <h2>Creative Developer & Tech Enthusiast</h2>
+    <p>Building sleek digital experiences</p>
+  </section>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I’m an Information Technology: Application & Database Development major with a Computer Science minor. Passionate about databases, backend development, and creating smart solutions.</p>
+    <p>Brief intro, skills, passions — all in a few lines.</p>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        <h3>Project Title 1</h3>
-        <p>Description of your project. What you used, what it does.</p>
-        <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
-      </li>
-      <li>
-        <h3>Project Title 2</h3>
-        <p>Description of another project.</p>
-        <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
-      </li>
-    </ul>
+    <h2>Recent Projects</h2>
+    <div class="project-list">
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>Cool description here.</p>
+      </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>Another cool thing you're building.</p>
+      </div>
+    </div>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">yourusername</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">@yourusername</a></p>
+    <h2>Contact Me</h2>
+    <p>Email: your.email@example.com</p>
+    <p>
+      <a href="#">LinkedIn</a> • <a href="#">GitHub</a>
+    </p>
   </section>
 
   <footer>
     <p>&copy; 2025 Your Name</p>
   </footer>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+
+    toggle.addEventListener('change', () => {
+      const theme = root.getAttribute('data-theme');
+      root.setAttribute('data-theme', theme === 'dark' ? 'light' : 'dark');
+    });
+  </script>
 </body>
 </html>
